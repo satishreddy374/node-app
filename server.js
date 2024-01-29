@@ -8,7 +8,7 @@ const ProductsList = require("./model")
 mongoose.connect("mongodb+srv://satish:mongodb374@cluster0.ltudgvf.mongodb.net/productsDatabase?retryWrites=true&w=majority").then((response) => console.log("DB is connected....")).catch((error) => console.log(error))                        
 
 app.use(express.json());
-
+app.use(cors({origin: "*"}))
 
 
 app.post("/addproduct", async(request, response) => {
